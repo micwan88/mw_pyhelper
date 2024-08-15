@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "mw_pyhelper"
+version = "1.0.0"
+description = "A set of python helper classes / utilities from MicWan"
+readme = "README.md"
+authors = [{ name = "Michael Wan", email = "hkmicmic@gmail.com" }]
+license = { file = "LICENSE" }
+dependencies = [
+    "requests",
+    "jproperties",
+    "pyyaml",
+    "selenium",
+    "selenium-wire"
+]
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/micwan88/mw_pyhelper"
