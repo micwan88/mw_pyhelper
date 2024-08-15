@@ -25,6 +25,8 @@ jobs:
           python -m pipenv install
       - name: Build package
         run: |
-          build-package.sh
+          chmod +x ./build-package.sh
+          ./build-package.sh
+        shell: bash
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
