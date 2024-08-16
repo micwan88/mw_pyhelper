@@ -15,11 +15,15 @@ license = { file = "LICENSE" }
 dependencies = [
     "requests",
     "jproperties",
-    "pyyaml",
+    "pyyaml"
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+webbot = [
     "selenium",
     "selenium-wire"
 ]
-requires-python = ">=3.9"
 
 [project.urls]
 Homepage = "https://github.com/micwan88/mw_pyhelper"
