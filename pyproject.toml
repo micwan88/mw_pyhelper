@@ -7,7 +7,7 @@ where = ["src"]
 
 [project]
 name = "mw_pyhelper"
-version = "1.0.0"
+version = "1.0.1"
 description = "A set of python helper classes / utilities from MicWan"
 readme = "README.md"
 authors = [{ name = "Michael Wan", email = "hkmicmic@gmail.com" }]
