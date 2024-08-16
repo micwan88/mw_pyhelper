@@ -11,6 +11,9 @@ selenium = "*"
 selenium-wire = "*"
 build = "*"
 twine = "*"
+blinker = "==1.7.0"
+setuptools = "*"
+mw-pyhelper = {file = ".", editable = true}
 
 [dev-packages]
 

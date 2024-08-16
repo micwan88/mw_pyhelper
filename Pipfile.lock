@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "de42533c8586b2d6ebcc3d9cf78a9a73f4af8603ec8b6c9033a19547e8fb3906"
+            "sha256": "4be237fd99676d48987c790506181b3c96f92edf426bc56d49e474dd836b779f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,12 @@
         },
         "blinker": {
             "hashes": [
-                "sha256:1779309f71bf239144b9399d06ae925637cf6634cf6bd131104184531bf67c01",
-                "sha256:8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"
+                "sha256:c3f865d4d54db7abc53758a01601cf343fe55b84c1de4e3fa910e420b438d5b9",
+                "sha256:e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==1.8.2"
+            "version": "==1.7.0"
         },
         "brotli": {
             "hashes": [
@@ -476,6 +477,10 @@
             "markers": "python_version >= '3.8'",
             "version": "==10.4.0"
         },
+        "mw-pyhelper": {
+            "editable": true,
+            "file": "."
+        },
         "nh3": {
             "hashes": [
                 "sha256:0411beb0589eacb6734f28d5497ca2ed379eafab8ad8c84b31bb5c34072b7164",
@@ -712,6 +717,15 @@
             "index": "pypi",
             "markers": "python_version >= '3.6'",
             "version": "==5.1.0"
+        },
+        "setuptools": {
+            "hashes": [
+                "sha256:80aacbf633704e9c8bfa1d99fa5dd4dc59573efcf9e4042c13d3bcef91ac2ef9",
+                "sha256:f11dd94b7bae3a156a95ec151f24e4637fb4fa19c878e4d191bfb8b2d82728c4"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==72.2.0"
         },
         "six": {
             "hashes": [
