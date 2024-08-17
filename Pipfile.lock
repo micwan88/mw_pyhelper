@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4be237fd99676d48987c790506181b3c96f92edf426bc56d49e474dd836b779f"
+            "sha256": "1e26afb36260cf6525165afefaeaed3d1fd855487796e33531f2984cc41b03b6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -208,7 +208,8 @@
                 "sha256:f9338cc05451f1942d0d8203ec2c346c830f8e86469903d5126c1f0a13a2bcbb",
                 "sha256:ffef8fd58a36fb5f1196919638f73dd3ae0db1a878982b27a9a5a176ede4ba91"
             ],
-            "markers": "os_name == 'nt' and implementation_name != 'pypy'",
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==1.17.0"
         },
         "charset-normalizer": {
@@ -306,14 +307,6 @@
             ],
             "markers": "python_full_version >= '3.7.0'",
             "version": "==3.3.2"
-        },
-        "colorama": {
-            "hashes": [
-                "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44",
-                "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
-            ],
-            "markers": "os_name == 'nt'",
-            "version": "==0.4.6"
         },
         "cryptography": {
             "hashes": [
@@ -542,14 +535,6 @@
             "markers": "python_version >= '3.8'",
             "version": "==2.22"
         },
-        "pydivert": {
-            "hashes": [
-                "sha256:382db488e3c37c03ec9ec94e061a0b24334d78dbaeebb7d4e4d32ce4355d9da1",
-                "sha256:f0e150f4ff591b78e35f514e319561dadff7f24a82186a171dd4d465483de5b4"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==2.1.0"
-        },
         "pygments": {
             "hashes": [
                 "sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199",
@@ -590,14 +575,6 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.7.1"
-        },
-        "pywin32-ctypes": {
-            "hashes": [
-                "sha256:8a1513379d709975552d202d942d9837758905c8d01eb82b8bcc30918929e7b8",
-                "sha256:d162dc04946d704503b2edc4d55f3dba5c1d539ead017afa00142c38b9885755"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==0.2.3"
         },
         "pyyaml": {
             "hashes": [

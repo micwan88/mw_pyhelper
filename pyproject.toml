@@ -14,16 +14,17 @@ requires-python = ">=3.9"
 
 [project.optional-dependencies]
 # here are for webbot package
-# also, selenium-wire required additional dependency
-# setuptools and blinker 1.7.0
 webbot = [
     "selenium"
 ]
+# also, selenium-wire required additional dependency
+# setuptools, blinker 1.7.0 and cffi
 wirebot = [
     "selenium",
     "selenium-wire",
     "blinker == 1.7.0",
-    "setuptools"
+    "setuptools",
+    "cffi"
 ]
 
 [project.urls]

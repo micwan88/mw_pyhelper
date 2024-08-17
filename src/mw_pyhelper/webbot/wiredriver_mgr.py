@@ -1,4 +1,4 @@
-from webdriver_mgr import *
+from .webdriver_mgr import *
 
 # wire driver
 from seleniumwire import webdriver as wire_webdriver
