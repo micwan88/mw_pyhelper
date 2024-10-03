@@ -14,40 +14,34 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium import webdriver
 
 from ..cfgloader import AppCfg
-
-DEFAULT_USER_AGENT_CHROME = r'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
-
-CFG_KEY_BROWSER_BINARY = 'mw_pyhelper.webbot.browserBinary'
-CFG_KEY_BROWSER_TYPE = 'mw_pyhelper.webbot.browserType'
-CFG_KEY_HEADLESS_MODE = 'mw_pyhelper.webbot.headlessMode'
-CFG_KEY_EXPLICIT_WAIT_TIMEOUT = 'mw_pyhelper.webbot.explicitWaitTimeout'
+from . import constants
 
 #general method for getting webdriver
 def get_webdriver(appcfg: AppCfg) -> Optional[RemoteWebDriver]:
    mylogger = logging.getLogger(__name__)
 
    is_headless = False
-   if appcfg.get(CFG_KEY_HEADLESS_MODE) and appcfg.get(CFG_KEY_HEADLESS_MODE).lower() == 'true':
+   if appcfg.get(constants.CFG_KEY_HEADLESS_MODE) and appcfg.get(constants.CFG_KEY_HEADLESS_MODE).lower() == 'true':
       is_headless = True
 
-   cfg_value = appcfg.get(CFG_KEY_BROWSER_TYPE)
+   cfg_value = appcfg.get(constants.CFG_KEY_BROWSER_TYPE)
    if cfg_value and cfg_value.lower() == 'chrome':
       chrome_option = webdriver.ChromeOptions()
       
-      if appcfg.get(CFG_KEY_BROWSER_BINARY):
-         chrome_option.binary_location = appcfg.get(CFG_KEY_BROWSER_BINARY)
+      if appcfg.get(constants.CFG_KEY_BROWSER_BINARY):
+         chrome_option.binary_location = appcfg.get(constants.CFG_KEY_BROWSER_BINARY)
 
       if is_headless:
          chrome_option.add_argument('--headless=new')
          #override user-agent as some site disallow headless mode browser
-         chrome_option.add_argument('--user-agent=' + DEFAULT_USER_AGENT_CHROME)
+         chrome_option.add_argument('--user-agent=' + constants.DEFAULT_USER_AGENT_CHROME)
       
       mylogger.debug('Chrome type driver return')
       return webdriver.Chrome(options=chrome_option)
    elif cfg_value and cfg_value.lower() == 'firefox':
       firefox_option = webdriver.FirefoxOptions()
-      if appcfg.get(CFG_KEY_BROWSER_BINARY):
-         firefox_option.binary_location = appcfg.get(CFG_KEY_BROWSER_BINARY)
+      if appcfg.get(constants.CFG_KEY_BROWSER_BINARY):
+         firefox_option.binary_location = appcfg.get(constants.CFG_KEY_BROWSER_BINARY)
       
       if is_headless:
          firefox_option.add_argument('-headless')

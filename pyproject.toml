@@ -26,6 +26,10 @@ wirebot = [
     "setuptools",
     "cffi"
 ]
+# here are for playwright webbot
+pw-bot = [
+    "playwright"
+]
 
 [project.urls]
 Homepage = "https://github.com/micwan88/mw_pyhelper"
