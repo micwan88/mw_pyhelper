@@ -71,6 +71,16 @@ def expect_to_be_attached(locator: Locator, explicit_waittime: int) -> bool:
         mylogger.debug(f'Page source dump: {locator.page.content()}')
     return False
 
+def expect_to_be_visible(locator: Locator, explicit_waittime: int) -> bool:
+    mylogger = logging.getLogger(__name__)
+    try:
+        expect(locator).to_be_visible(timeout=explicit_waittime * 1000)
+        return True
+    except AssertionError:
+        mylogger.error('Element not visible')
+        mylogger.debug(f'Page source dump: {locator.page.content()}')
+    return False
+
 def expect_to_have_count(locator: Locator, explicit_waittime: int, count: int) -> bool:
     mylogger = logging.getLogger(__name__)
     try:
