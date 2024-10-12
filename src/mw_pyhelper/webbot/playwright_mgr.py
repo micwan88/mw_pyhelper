@@ -52,6 +52,15 @@ def navigate_to(page: Page, explicit_waittime: int, page_url: str, match_title: 
 
     return False
 
+def check_title(page: Page, explicit_waittime: int, pattern: Union[Pattern[str], str]) -> bool:
+    mylogger = logging.getLogger(__name__)
+    try:
+        expect(page).to_have_title(pattern, timeout=explicit_waittime * 1000)
+        return True
+    except AssertionError:
+        mylogger.error(f'Page title not match with "{pattern}":"{page.title()}"')
+    return False
+
 def check_url(page: Page, explicit_waittime: int, pattern: Union[Pattern[str], str]) -> bool:
     mylogger = logging.getLogger(__name__)
     try:
