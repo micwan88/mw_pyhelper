@@ -40,14 +40,14 @@ def navigate_to(page: Page, explicit_waittime: int, page_url: str, match_title: 
         tryCount += 1
         try:
             mylogger.debug(f'Loading URL - ({tryCount}:{retry_count}): {page_url}')
-            page.goto(page_url)
+            page.goto(page_url, timeout=explicit_waittime * 1000)
 
             expect(page).to_have_title(match_title, timeout=explicit_waittime * 1000)
 
             if tryCount > 1:
                 mylogger.info(f'Retry success at count: {tryCount}')
             return True
-        except AssertionError:
+        except (AssertionError, TimeoutError):
             mylogger.error(f'Page title not match - ({tryCount}:{retry_count}) with "{match_title}":"{page.title()}"')
 
     return False
@@ -70,32 +70,35 @@ def check_url(page: Page, explicit_waittime: int, pattern: Union[Pattern[str], s
         mylogger.error(f'Current URL does not match with "{pattern}":"{page.url}"')
     return False
 
-def expect_to_be_attached(locator: Locator, explicit_waittime: int) -> bool:
+def expect_to_be_attached(locator: Locator, explicit_waittime: int, dump_source_on_err: bool = True) -> bool:
     mylogger = logging.getLogger(__name__)
     try:
         expect(locator).to_be_attached(timeout=explicit_waittime * 1000)
         return True
     except AssertionError:
         mylogger.error('Cannot get element by locator')
-        mylogger.debug(f'Page source dump: {locator.page.content()}')
+        if dump_source_on_err:
+            mylogger.debug(f'Page source dump: {locator.page.content()}')
     return False
 
-def expect_to_be_visible(locator: Locator, explicit_waittime: int) -> bool:
+def expect_to_be_visible(locator: Locator, explicit_waittime: int, dump_source_on_err: bool = True) -> bool:
     mylogger = logging.getLogger(__name__)
     try:
         expect(locator).to_be_visible(timeout=explicit_waittime * 1000)
         return True
     except AssertionError:
         mylogger.error('Element not visible')
-        mylogger.debug(f'Page source dump: {locator.page.content()}')
+        if dump_source_on_err:
+            mylogger.debug(f'Page source dump: {locator.page.content()}')
     return False
 
-def expect_to_have_count(locator: Locator, explicit_waittime: int, count: int) -> bool:
+def expect_to_have_count(locator: Locator, explicit_waittime: int, count: int, dump_source_on_err: bool = True) -> bool:
     mylogger = logging.getLogger(__name__)
     try:
         expect(locator).to_have_count(count, timeout=explicit_waittime * 1000)
         return True
     except AssertionError:
         mylogger.error('Element count not match by locator')
-        mylogger.debug(f'Page source dump: {locator.page.content()}')
+        if dump_source_on_err:
+            mylogger.debug(f'Page source dump: {locator.page.content()}')
     return False
