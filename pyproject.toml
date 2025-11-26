@@ -17,6 +17,7 @@ requires-python = ">=3.9"
 webbot = [
     "selenium"
 ]
+
 # also, selenium-wire required additional dependency
 # setuptools, blinker 1.7.0 and cffi
 wirebot = [
@@ -26,9 +27,15 @@ wirebot = [
     "setuptools",
     "cffi"
 ]
+
 # here are for playwright webbot
 pw-bot = [
     "playwright"
+]
+
+[dependency-groups]
+dev = [
+    "mw_pyhelper[webbot,wirebot,pw-bot]"
 ]
 
 [project.urls]
@@ -40,6 +47,10 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["mw_pyhelper", "mw_pyhelper.*"]
 
 [tool.setuptools.dynamic]
 version = {attr = "mw_pyhelper.__version__"}
+
+[tool.uv.sources]
+mw_pyhelper = { workspace = true }
