@@ -35,7 +35,8 @@ pw-bot = [
 
 [dependency-groups]
 dev = [
-    "mw_pyhelper[webbot,wirebot,pw-bot]"
+    "mw_pyhelper[webbot,wirebot,pw-bot]",
+    "twine>=6.2.0",
 ]
 
 [project.urls]
