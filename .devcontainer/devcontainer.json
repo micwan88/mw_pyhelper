@@ -13,7 +13,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "python -m pip install uv",
-	"postStartCommand": "uv sync --all-extras"
+	"postStartCommand": "uv sync --all-extras --locked"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
