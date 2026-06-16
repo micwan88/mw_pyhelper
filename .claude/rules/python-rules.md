@@ -7,7 +7,7 @@ paths:
 
 - Always use `uv` as package manager
 - Always generate uv lock file after modify package
-- Use `uv run` to execute Python program
+- Use `uv run --locked` to execute Python program
 
 # Python Coding Rules
 
@@ -16,3 +16,4 @@ paths:
 - Use logger instead of 'print' statement
 - Try make 'hardcode' value to be declare as constants rather just hardcode inline or even make it configurable
 - Please don't declare inline import statement, should declare at the top
+- Always use type hints if possible

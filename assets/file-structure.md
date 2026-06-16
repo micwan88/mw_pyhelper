@@ -14,8 +14,8 @@ Project Folder
 │   ├── xxxx-note.md              ← lessons capture by agent
 │   └── ...
 ├── assets/                       ← static project files
-│   ├── sop.md                    ← project sop
 │   ├── file-structure.md         ← project file structure
+│   ├── sop.md                    ← project sop
 │   └── ...
 ├── src/mw_pyhelper/              ← codebase files
 │   ├── messaging                 ← helper/utilities about messaging
