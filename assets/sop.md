@@ -80,7 +80,7 @@ Note:
 - The given plan must be status = `Approved` and `None` is shown under "Question/Issue" section if not push back and state.
 - Mark items complete as you go in the plan
 - Mark status = `InProgress`
-- If something goes sideways with plan/request, STOP and state in plan with question/issue + mark `Blocked` to status then push back to user/upstream
+- If something goes sideways with plan/request, STOP and state it in plan under "Question/Issue" section + mark `Blocked` to status then push back to user/upstream
 - Once all completed, can go next stage
 
 Input:
@@ -95,7 +95,7 @@ Output:
 
 - Test/Verify/Check the work output against with plan or the request
 - Confirm the correctness of the work output, if not go back last stage to fix it
-- If something goes sideways with plan/request, STOP and state in plan with question/issue + mark `Blocked` to status then push back to user/upstream
+- If something goes sideways with plan/request, STOP and state it in plan under "Question/Issue" section + mark `Blocked` to status then push back to user/upstream
 - If everything has been proof for correctness, go next stage
 
 Input:
