@@ -3,6 +3,7 @@ import logging
 import re
 import requests
 from requests.exceptions import RequestException
+from ..network.proxyselector import ProxySelector
 
 TELEGRAM_BOT_SENDMSG_ENDPONT = 'https://api.telegram.org/bot%s/sendMessage'
 TELEGRAM_BOT_SENDMSG_PARAM_CHATID = 'chat_id'
@@ -13,9 +14,11 @@ TELEGRAM_BOT_SENDMSG_VALUE_PARSE_MODE_HTML = 'HTML'
 
 
 class TelegramBot():
-    def __init__(self, token: str, botname: Optional[str] = None) -> None:
+    def __init__(self, token: str, botname: Optional[str] = None,
+                 proxy_selector: Optional[ProxySelector] = None) -> None:
         self.token = token
         self.botname = botname
+        self.proxy_selector = proxy_selector
 
         # Init logger for whole class
         self.mylogger = logging.getLogger(__name__)
@@ -44,7 +47,9 @@ class TelegramBot():
                 json_payload[TELEGRAM_BOT_SENDMSG_PARAM_PARSE_MODE] = TELEGRAM_BOT_SENDMSG_VALUE_PARSE_MODE_HTML
                 self.mylogger.debug('outputJson: %s' % json_payload)
 
-                response = requests.post(posturl, json=json_payload)
+                proxies = self.proxy_selector.getproxy() if self.proxy_selector is not None else None
+
+                response = requests.post(posturl, json=json_payload, proxies=proxies)
                 if response.status_code != requests.codes.ok:
                     self.mylogger.debug('PostMsg error with chatID: %s - response: %s' % (chatID, response.text))
                     return -1
