@@ -22,6 +22,6 @@ description: story template
 - xxxx
 - xxxx
 
-## Reply for Question/Issue
+## Reply for Question/Issue (Optional)
 
 None
