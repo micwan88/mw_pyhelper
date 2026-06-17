@@ -37,7 +37,12 @@ pw-bot = [
 dev = [
     "mw_pyhelper[webbot,wirebot,pw-bot]",
     "twine>=6.2.0",
+    "pytest>=8.0.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"
 
 [project.urls]
 Homepage = "https://github.com/micwan88/mw_pyhelper"
