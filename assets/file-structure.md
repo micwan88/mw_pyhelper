@@ -25,6 +25,12 @@ Project Folder
 │   ├── logcfg.py                 ← common log cfg loader
 │   ├── __init__.py               ← default package file that define package version
 │   └── ...
+├── tests/unit/                   ← unittest files (offline tests)
+│   ├── messaging/xxxx1                     
+│   └── ...
+├── tests/integration/            ← integration test files
+│   ├── messaging/xxxx1                     
+│   └── ...
 ├── pyproject.toml                ← python project definition
 ├── uv.lock                       ← uv lock file
 └── xxxxx                         ← other project file (LICENSE, README, ... etc)

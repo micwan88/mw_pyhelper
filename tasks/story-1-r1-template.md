@@ -11,7 +11,7 @@ description: story template
 - xxxx
 - xxxx
 
-## Story Items
+## Story Details
 - xxxx
 - xxxx
 

@@ -1,6 +1,6 @@
 # Standard Operating Procedure
 
-There are 4 stages for every work unless user request to override it. They are `Planning`, `Implementation`, `Verification` and `Review`.
+There are 4 stages for every work unless user request to override it explicitly. They are `Planning`, `Implementation`, `Verification` and `Review`.
 
 ## Workflow Overview
 
@@ -14,16 +14,17 @@ Note:
 ## Files Between Stages
 
 ### File List
-- story-{id}-r{rev}.md: the request given by user/upstream
+- {request-file-name}-{id}-r{rev}.md: the request given by user/upstream
 - {agent-name}-plan-{id}-r{rev}.md: the work plan with status/question/issue through out the workflow
 - {agent-name}-note.md: lessons capture in every request
 
 Note:
+- `{request-file-name}`: the file name give by user/upstream, can be "story", "request", "spec" or any other name
 - `{agent-name}`: main / subagent / session name
 - `{id}`: unique number represent particular request given by user/upstream, otherwise increment by 1 from last max {id}.
 - `{rev}`: revision number that represent n-th version of the file.
 
-### Metadata Template
+### File Template and Metadata
 
 ```
 ---
@@ -35,13 +36,13 @@ author: {agent-name} | user
 description: some description
 ---
 
-## Tasks
-Content ...
-
 ## Question/Issue
 - None
 
-## Summary
+## Sample sections 1
+- xxx
+
+## Sample sections 2
 - xxx
 ```
 
@@ -65,7 +66,7 @@ status:
 - Notify user/upstream to review and waiting for plan approval.
 
 Input:
-- "story-{id}-r{rev}.md" or "prompt" given by user/upstream
+- "{request-file-name}-{id}-r{rev}.md" or "prompt" given by user/upstream
 
 Output:
 - Detail work plan "{agent-name}-plan-{id}-r{rev}.md" for user/upstream review
@@ -85,7 +86,7 @@ Note:
 
 Input:
 - Approved plan
-- Or "story-{id}-r{rev}.md" or "prompt" if user skipped the `Planning` stage
+- Or "{request-file-name}-{id}-r{rev}.md" or "prompt" if user skipped the `Planning` stage
 
 Output:
 - Actual work output
@@ -129,7 +130,16 @@ Before implementing:
 - If something is unclear, stop. Name what's confusing. Ask.
 - Enter plan mode by default, even verification steps, not just building
 
-### 2. Simplicity First
+### 2. Subagent Strategy
+
+**Offload task to subagents for complex problems**
+
+- Use subagents liberally to keep main context window clean
+- Offload research, exploration, and parallel analysis to subagents
+- For complex problems, throw more compute at it via subagents
+- One task per subagent for focused execution
+
+### 3. Simplicity First
 
 **Minimum code that solves the problem. Nothing speculative.**
 
@@ -141,7 +151,7 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-### 3. Surgical Changes
+### 4. Surgical Changes
 
 **Touch only what you must. Clean up only your own mess.**
 
@@ -157,7 +167,9 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-### 4. Verification Before Mark Whole Task Done
+### 5. Proven To Work / Validated
+
+**Verify it before marking the whole task done**
 
 - Never mark a task complete without proving it works
 - Diff behavior between main and your changes when relevant

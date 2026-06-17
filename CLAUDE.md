@@ -8,7 +8,7 @@ This project is to making some python helper/utilities class for self usage
 
 ## 2. SOP
 
-Refer to assets/sop.md
+@assets/sop.md
 
 ## 3. Technical Stack
 

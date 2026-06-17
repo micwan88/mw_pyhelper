@@ -8,6 +8,7 @@ paths:
 - Always use `uv` as package manager
 - Always generate uv lock file after modify package
 - Use `uv run --locked` to execute Python program
+- Use `pytest` for test and separated integration test / unittest (offline) in different folders say `/tests/unit/packagename/xxx`, `/tests/integration/packagename/xxx`
 
 # Python Coding Rules
 
