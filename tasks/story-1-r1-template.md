@@ -8,13 +8,20 @@ description: story template
 ---
 
 ## Intuition
+
 - xxxx
 - xxxx
 
 ## Story Details
+
 - xxxx
 - xxxx
 
 ## Success Criteria
+
 - xxxx
 - xxxx
+
+## Reply for Question/Issue
+
+None
