@@ -8,7 +8,8 @@ paths:
 - Always use `uv` as package manager
 - Always generate uv lock file after modify package
 - Use `uv run --locked` to execute Python program
-- Use `pytest` for test and separated integration test / unittest (offline) in different folders say `/tests/unit/packagename/xxx`, `/tests/integration/packagename/xxx`
+- Use `pytest` for test and separated integration test / unittest (offline) in different folders say `/tests/unit/xxx`, `/tests/integration/xxx`
+- test file location should align or with similar path as their target test object. i.e. `/tests/unit/package_name_a/package_name_b/test_xxxx.py` means the test related to object `codebase_path/package_name_a/package_name_b/xxxx.py`
 
 # Python Coding Rules
 
