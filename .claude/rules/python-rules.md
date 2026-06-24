@@ -14,8 +14,9 @@ paths:
 # Python Coding Rules
 
 - Always make program as a function and try to make it re-usable. (i.e. make `main` function and call it under '__main__')
+- Always use type hints if possible
 - Setup the logger in the early main process if any
 - Use logger instead of 'print' statement
 - Try make 'hardcode' value to be declare as constants rather just hardcode inline or even make it configurable
-- Please don't declare inline import statement, should declare at the top
-- Always use type hints if possible
+- Don't declare inline import statement, should declare at the top
+- Don't declare nested function if they can be avoided, try making functions that can be reused by other python program
